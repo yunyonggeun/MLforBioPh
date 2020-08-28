@@ -1,5 +1,6 @@
-doma
-<div>Teachable Machine Image Model</div>
+<!DOCTYPE html>
+<html>
+    <body>
 <button type="button" onclick="init()">Start</button>
 <div id="webcam-container"></div>
 <div id="label-container"></div>
@@ -50,6 +51,7 @@ doma
     // run the webcam image through the image model
     async function predict() {
         // predict can take in an image, video or canvas html element
+        console.log(prediction);
         const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
@@ -57,5 +59,8 @@ doma
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
     }
+    init();
 </script>
 
+    </body>
+</html>
